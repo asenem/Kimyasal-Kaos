@@ -1,0 +1,233 @@
+@import 'style.css';
+
+
+main, body{
+    background-color: black;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+main{
+    transform: scale(1.6);
+}
+
+body input{
+    background-color:white;
+    text-align:center;
+    display:block;
+
+    
+    transition: transform 0.2s;
+    color:black !important;
+    border:0;
+    font-size:1.8vmin;
+}
+
+
+.maxPlayers{
+    width:3vmin;
+}
+
+label,.stats{
+    color:white !important;
+    font-size:2vmin;
+}
+
+.stats {
+    font-size:1vmin;
+}
+
+
+.nicknameArea {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:4vmin;
+
+}
+
+.nicknameArea label{
+    margin-right:1vmin;
+}
+
+.nicknameArea input {
+    background-color:#FFFFFFB0;
+    transition: 0.5s;
+}
+
+.nicknameArea input:hover {
+    background-color:#FFFFFFD0;    
+}
+
+.logo img {
+    width:60vmin;
+    margin-bottom:8vmin;
+}
+
+@keyframes breathing {
+    from {
+      transform: scale(0.97);
+    }
+    to {
+      transform: scale(1.03);
+    }
+}
+
+.logo img {
+
+    animation-name: breathing;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+
+    transform-style: preserve-3d;
+}
+
+input {
+
+    font-family: rexlia;
+}
+
+.joinOrNot {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.joinOrNot .labelButton{
+    
+}
+
+.joinOrNot div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;    
+}
+
+.joinOrNot div:first-child{
+    width:50%;
+}
+
+.createGame{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:50%;
+}
+
+
+.createGame input {
+    margin: 1vmin;
+}
+
+.nicknameArea  label{
+    color:#d070fd !important;
+}
+
+footer {
+    position:absolute;
+    float: left;
+    bottom:2vh;
+
+}
+
+.joinArea .labelButton {
+    background-image:url('/res/button_clear_blue.svg');
+    font-size:3vmin;
+    width:30vmin;
+    height:6vmin;
+    margin-bottom: 2vmin;
+}
+
+.joinArea span {
+    position: relative;
+    top: 1vmin;
+
+}
+
+.joinArea {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.createGame > .labelButton {
+    font-size: 2.5vmin;
+    width: 70vmin;
+    height: 7vmin;
+}
+
+.disabled {
+    opacity:0.5;
+    pointer-events: none;
+}
+
+input:invalid {
+    color:red;
+    outline: 0.5vmin solid red;
+}
+
+
+.trigger{
+    display:none;
+}
+
+.visibleCheckbox{
+    position:relative;
+    width:4.1vmin;
+    height:2.3vmin;
+    top:1.2vmin;
+    background-color:white;
+}
+
+.visibleCheckbox label{
+
+    background-image: url(/res/eye.svg);
+    background-position: left center;
+    background-size: auto 100%;
+    width: 3.7vmin;
+    height: 2vmin;;
+    background-repeat: no-repeat;
+}
+
+.trigger:checked + div {
+    background-color:red;
+}
+
+header {
+    position:absolute;
+    float: left;
+    display: none;
+    top:2vh;
+}
+
+.stats:not(:fullscreen){
+    color:white !important;
+}
+
+.stats:fullscreen{
+    color:blue !important;
+}
+
+
+
+.sizeWarning::after{
+    color: red;
+    content:"Warning: Screen size below the recommended minimum";
+}
+
+
+@media (width < 1280px) or (height < 720px){
+    header{
+	display:block;
+    }
+}
+
+.github_logo {
+    fill:white;
+}

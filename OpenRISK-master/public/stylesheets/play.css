@@ -1,0 +1,480 @@
+@import "style.css";
+
+dialog {
+    position: absolute;
+    float: none;
+    top: 5%;
+}
+
+#mainCanvas {
+    z-index:-10000;
+}
+
+.menuButton {
+    position: absolute;
+    float: left;
+    top: 1vh;
+    margin: 1vmin;
+    width: 5vmin;
+}
+
+.uiOverlay {    
+    display: none;
+
+}
+
+.menuButton:hover {
+    background-color: #0000FFA0;
+    outline: #0000FFA0 solid 2px;
+}
+
+/* Menu*/
+
+.waitingForGame {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.waitingForGame label, .shareLink{
+    color:red;
+    display:block;
+    text-align:center;
+}
+
+.waitingForGame label{
+    font-size:1.2vmin;
+}
+
+.shareLink{
+    color:white;
+    margin-bottom:2vmin;
+}
+
+.gameLink{
+    color:#d070fd;
+}
+
+/* Menu */
+.menuPanelWrapper{
+    position:absolute;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+}
+
+.menuPanel{
+    margin-right:auto;
+    margin-left:auto;
+    background-image:url('/res/menu_popup.svg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:24vmin;
+    height:40vmin;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.menuPanel label {
+    background-image:url('/res/button_clear.svg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    text-align:center;
+    display:block;
+    width:15vmin;
+    margin:1vmin;
+    transition: transform 0.2s;
+}
+
+.menuPanel label:hover{
+    transform: translateY(-0.1vmin);
+}
+
+/* Troop number panel*/
+
+.troopNumPanel{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: none;
+    width:53vmin;
+    height:9vmin;    
+}
+
+.troopsBG {
+    position: absolute;
+    margin:0;
+    border:0;
+    height:10vmin;
+    bottom:0;
+    right:0;
+}
+
+
+.troopNumPanel .troopNumButton {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vmin;
+    margin-right: 4vmin;
+}
+
+.troopNumPanel .troopNumLabel{
+    position: absolute;
+    float: right;
+    right: 0.1vmin;
+    font-size: x-large;
+    margin: 1vmin;
+    color: red;
+
+}
+
+.troopNumPanel .troopNumButton img{
+    height: 3vmin;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:100;
+    transition: transform 0.2s;
+}
+
+.troopNumPanel .troopNumButton img:hover{
+    transform: translateY(-0.1vmin);
+}
+
+.troopnum_slidecontainer {
+    width: 50vmin; /* Width of the outside container */
+    margin: 1vmin;
+}
+
+/* The slider itself */
+.troopnum_slidecontainer .slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 1vmin; /* Specified height */
+  background: #f7f7f7; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: background-color 200ms linear;
+}
+
+.troopnum_slidecontainer .slider:hover {
+    background-color:#d9d9d9;
+}
+
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.troopnum_slidecontainer .slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 1.5vmin; /* Set a specific slider handle width */
+  height: 1.5vmin; /* Slider handle height */
+  background: red; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.troopnum_slidecontainer .slider::-moz-range-thumb {
+  width: 1.5vmin; /* Set a specific slider handle width */
+  height: 1.5vmin; /* Slider handle height */
+  background: red; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+/* status bar */
+
+.statusBar {
+    position:absolute;
+    float:right;
+    top: 0;
+    right:0;
+    background-color: black;
+}
+
+
+.statusBar label {
+    color: red;
+    margin: 2vmin;
+
+    -webkit-text-stroke: thin #d9d9d9;
+    font-size:x-large;
+
+    animation-name: breathing;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-play-state: paused;
+
+    transform-style: preserve-3d;
+}
+
+.statusBar:hover label {
+    animation-play-state: running;
+}
+
+@keyframes breathing {
+    from {
+	font-size:x-large;
+
+    }
+    to {
+	font-size:1.55em;
+    }
+}
+
+/* Win screen */
+
+.winScreenWrapper{
+    position:absolute;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+}
+
+.winScreen {
+    margin-right:auto;
+    margin-left:auto;
+    background-image:url('/res/winScreen_bg.svg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:57vmin;
+    height:40vmin;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:left;
+}
+
+.winScreen > div {
+    height:50%;
+    width:80%;
+    text-align:left;
+}
+
+.winScreen > div::first-line {
+    font-size: x-large;
+    line-height:10vmin;
+    color:red;
+}
+
+/* Attack result panel */
+
+.attackResPanel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:55vmin;
+    height:23vmin;
+    display: none;
+    background-image:url('/res/attack_result_bg.svg');
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    align-items: center;
+}
+
+.attackResPanel > div:first-child {
+    margin-left: 4.8vmin;
+}
+
+.attackResPanel > div {
+    margin-top: 5vmin;
+}
+
+
+.attackerLabel, .defenderLabel{
+    color: red;
+    margin-right:1vmin;
+    margin-bottom: 1vmin;
+    display: block;
+    width:12vmin;
+
+}
+
+.attackerDice img, .defenderDice img{
+    height: 3vmin;
+}
+
+.attackResPanel .diceResults{
+    display:flex;
+}
+
+.originDestination{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:40%;
+	
+}
+
+.originDestination label{
+    color:red;
+    display:block;
+    margin-bottom:2vmin;
+    margin-top:1vmin;
+    width:10vmin;
+    text-align:center;
+}
+
+.originDestination img{
+    height:2vmin;
+    margin-bottom:0;
+}
+
+.lossDisplay{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    right:0;
+    width:40%;
+    height:100%;
+}
+
+.lossDisplay label{
+    display:flex;
+    color: red;
+    font-size: x-large;
+}
+
+.lossDisplay div {
+    display:flex;
+    margin-top:3vmin;
+}
+
+.lossDisplay div svg {
+    height:6vmin;
+    fill:red;
+    margin-left:0.2vmin;
+    margin-right:0.2vmin;
+}
+
+
+.lossDisplay > img {
+    position:absolute;
+    right:0;
+    bottom:19vmin;
+    align-items: center;
+
+    height: 4vmin;
+    margin-top:4vmin;
+    transition: transform 0.2s;
+}
+
+.lossDisplay > img:hover{
+    transform: translateY(-0.1vmin);
+}
+
+/* Cards + cards menu */
+
+.cardsMenuWrapper{
+    position:absolute;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+.cardsMenu {
+    margin-right:auto;
+    margin-left:auto;
+    background-image:url('/res/winScreen_bg.svg');
+    background-size: 100vmin 40vmin;
+    background-repeat:no-repeat;
+    width:100vmin;
+    height:40vmin;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:left;
+}
+
+.cardsMenu > .cardsWrapper {
+    width:100%;
+    height:60%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.cardsMenu > .labelButton:first-of-type{
+    background-image:url('/res/button_clear_blue.svg');
+}
+
+.cardsWrapper > .card{
+    background-image:url('/res/card.svg');
+    background-size:contain;
+    background-repeat:no-repeat;    
+    width:15vmin;
+    height:20vmin;
+    margin: 1vmin;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    display:flex;
+}
+
+.cardsWrapper > .card~.card{
+    margin-left:-7vmin;
+}
+
+
+
+.card > img {
+    width: 30%;
+}
+
+.card > img:last-of-type{
+    width: 30%;
+    heigth:10%;
+    margin:1vmin;
+}
+
+.card > label {
+    display: block;
+    height: 10%;
+    font-size:1.5vmin;
+    text-align:center;
+}
+
+
+/* Turn options panel */
+
+
+.cardsButton{
+    height:10vmin;
+    margin: 1vmin;
+    display:none;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+
+.endPhaseButton {
+    width: 10vmin;
+    display:none;
+    bottom:0;
+    left:0;
+    position:absolute;
+}

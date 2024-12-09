@@ -1,0 +1,49 @@
+
+@font-face {
+    font-family: rexlia;
+    src: url(/res/rexlia.ttf);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    overflow: hidden; /*  Disable scrollbars */
+    display: block;  /* No floating content on sides */
+    font-family: rexlia;
+    background-color: black;
+}
+
+.labelButton {
+    background-image:url('/res/button_clear.svg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    text-align:center;
+    display:block;
+    width:15vmin;
+    margin:1vmin;
+    transition: transform 0.2s;
+    color:black;
+}
+
+.labelButton:hover{
+    transform: translateY(-0.1vmin);
+}
+
+.hoverable:hover{
+    transform: translateY(-0.1vmin);
+}
+
+.disabled {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+h1{
+    
+    font-size:2vmin;
+    background: -webkit-linear-gradient(#a41313, #dd2a31);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

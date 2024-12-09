@@ -1,0 +1,22 @@
+@import 'style.css';
+
+main, body {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3vw;
+}
+
+
+
+.games{
+    color:white;
+    overflow-y:auto;
+}
+
+
+.games .labelButton{
+    width:3vw;
+    display:inline-block;
+}
